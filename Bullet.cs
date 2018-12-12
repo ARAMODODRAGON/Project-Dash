@@ -5,19 +5,24 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
     public int speed;
     private Rigidbody2D rb;
-
-	// Use this for initialization
-	void Start ()
+    public Bullet(int inputSpeed, bool isRight)
     {
-		rb = this.GetComponent<Rigidbody2D>();
+        speed = inputSpeed;
+        if (isRight == true) { speed = -speed; }
     }
-	
-	// Update is called once per frame
-	void Update ()
+    void Start()
+    {
+        rb = this.GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         moveBullet();
 
     }
+
+    
 
     void moveBullet()
     {

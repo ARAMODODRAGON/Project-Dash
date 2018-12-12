@@ -17,11 +17,11 @@ public class SwitchLevel : MonoBehaviour {
     {
         if (collision.tag.Equals("Player"))
         {
-            NextScene();
             if (EndGame == true)
             {
                 QuitGame();
             }
+            NextScene();
         }
     }
     public void QuitGame()
